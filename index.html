@@ -1,72 +1,98 @@
 <html>
   <head>
-    <title>CryptoKube</title>
+    <title>CryptoKube.io | P2P Crypto Infra Stack</title>
   </head>
   <body>
-    <table>
+    <table border=1>
       <tr>
-    <td>
-      <img src="logo.png" alt="CK Logo"/><br/>
-      <b>www.cryptokube.io</b>
-    </td>
-    <td>
-      <h2>DevCon4 Workshop</h2>
-      <h3>Create DigitalOcean account</h3>
-      <a href="https://do.co/devcon4-eth">https://do.co/devcon4-eth</a>
-      <h3>Add SSH public key</h3>
-      <a href="https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys/">
-        https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys
-      </a>
-      <h3>Create personal access token (API key)</h3>
-      <a href="https://www.digitalocean.com/docs/api/create-personal-access-token/">
-        https://www.digitalocean.com/docs/api/create-personal-access-token
-      </a>
-      <h3>cloud-config.yaml</h3>
-      <pre>
-#cloud-config
-#  from: https:/cryptokube.io/devcon4/cloud-config.yaml
-
-package_upgrade: true
-
-packages:
-  - python
-  - python-pip
-  - git
-  - zip
-  - jq
-
-runcmd:
-  - [curl, -o, /tmp/terraform.zip, "https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip"]
-  - [unzip, -d, /usr/local/bin/, /tmp/terraform.zip]
-  - [curl, -L, -o, /tmp/terraform-inventory.zip, "https://github.com/adammck/terraform-inventory/releases/download/v0.7-pre/terraform-inventory_v0.7-pre_linux_amd64.zip"]
-  - [unzip, -d, /usr/local/bin/, /tmp/terraform-inventory.zip]
-  - [pip, install, -U, pip, ansible]
-  - [git, clone, "https://github.com/cryptokube-io/devcon4-workshop.git"]
-      </pre>
-    </td>
+        <td align="center">
+          <img src="logo.png" alt="CK Logo"/><br/>
+          <i>Peer-to-peer Crypto Application Infrastructure Stack</i><br/>
+          <b>www.cryptokube.io</b><br/>
+        </td>
+        <td>
+          <h2>DevCon4 Workshop QuickStart</h2>
+          <ol>
+            <li>
+              Create DigitalOcean account - 
+              <a href="https://do.co/devcon4-eth">https://do.co/devcon4-eth</a>
+            </li>
+            <li>
+              Add SSH public key -
+              <a href="https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys/">
+                https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys
+              </a>
+            </li>
+            <li>
+              Create personal access token (API key) - 
+              <a href="https://www.digitalocean.com/docs/api/create-personal-access-token/">
+                https://www.digitalocean.com/docs/api/create-personal-access-token
+              </a>
+            </li>
+            <li>
+              Create management host - 
+              <a>TODO</a>
+            </li>
+            <li>
+              cloud-config.yaml:
+              <pre>
+                #cloud-config
+                #  from: https:/cryptokube.io/devcon4/cloud-config.yaml
+                
+                package_upgrade: true
+                
+                packages:
+                  - python
+                  - python-pip
+                  - git
+                  - zip
+                  - jq
+                
+                runcmd:
+                  - [curl, -o, /tmp/terraform.zip, "https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip"]
+                  - [unzip, -d, /usr/local/bin/, /tmp/terraform.zip]
+                  - [curl, -L, -o, /tmp/terraform-inventory.zip, "https://github.com/adammck/terraform-inventory/releases/download/v0.7-pre/terraform-inventory_v0.7-pre_linux_amd64.zip"]
+                  - [unzip, -d, /usr/local/bin/, /tmp/terraform-inventory.zip]
+                  - [pip, install, -U, pip, ansible]
+                  - [git, clone, "https://github.com/cryptokube-io/devcon4-workshop.git"]
+              </pre>
+            </li>
+            <li>
+              Run initialization script - 
+              <a href="">TODO</a>
+            </li>
+            <li>
+              Continue to 
+              <a href="">Exercise 00</a>
+            </li>
+          </ol>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h2>Ansible Roles</h2>
+          <ul>
+            <li><a href="https://github.com/cryptokube-io/ansible-ansible">ansible</a></li>
+            <li><a href="https://github.com/cryptokube-io/ansible-geth">geth</a></li>
+            <li><a href="https://github.com/cryptokube-io/ansible-haproxy">haproxy</a></li>
+            <li><a href="https://github.com/cryptokube-io/ansible-nginx">nginx</a></li>
+            <li><a href="https://github.com/cryptokube-io/ansible-nodejs">nodejs</a></li>
+            <li><a href="https://github.com/cryptokube-io/ansible-packer">packer</a></li>
+            <li><a href="https://github.com/cryptokube-io/ansible-parity">parity</a></li>
+            <li><a href="https://github.com/cryptokube-io/ansible-terraform">terraform</a></li>
+            <li><a href="https://github.com/cryptokube-io/ansible-ubuntu">ubuntu</a></li>
+          </ul>
+        </td>
+        <td>
+          <h2>Terraform Modules</h2>
+          <p>(coming soon--unable to break these out before DevCon4)</p>
+          <ul>
+            <li>digitalocean-parity-light</li>
+            <li>digitalocean-parity-full</li>
+            <li>digitalocean-haproxy</li>
+          </ul>
+        </td>
       </tr>
     </table>
-    <hr/>
-    <div align="center">
-      <h2>Ansible Roles</h2>
-      <ul>
-        <li><a href="https://github.com/cryptokube-io/ansible-ansible">ansible</a></li>
-        <li><a href="https://github.com/cryptokube-io/ansible-geth">geth</a></li>
-        <li><a href="https://github.com/cryptokube-io/ansible-haproxy">haproxy</a></li>
-        <li><a href="https://github.com/cryptokube-io/ansible-nginx">nginx</a></li>
-        <li><a href="https://github.com/cryptokube-io/ansible-nodejs">nodejs</a></li>
-        <li><a href="https://github.com/cryptokube-io/ansible-packer">packer</a></li>
-        <li><a href="https://github.com/cryptokube-io/ansible-parity">parity</a></li>
-        <li><a href="https://github.com/cryptokube-io/ansible-terraform">terraform</a></li>
-        <li><a href="https://github.com/cryptokube-io/ansible-ubuntu">ubuntu</a></li>
-      </ul>
-      <h2>Terraform Modules</h2>
-      <p>(coming soon, I wasn't able to break these out in time for DevCon4)</p>
-      <ul>
-        <li>digitalocean-parity-light</li>
-        <li>digitalocean-parity-full</li>
-        <li>digitalocean-haproxy</li>
-      </ul>
-    </div>
   </body>
 </html>
