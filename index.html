@@ -87,8 +87,6 @@
   # wait ~5 minutes, until log stops with "Cloud-init ... finished at ..."
             </pre>
           </li>
-          <li>Create SSH key pair for workshop droplets: <pre>ssh-keygen -t rsa -C $(hostname -f)</pre></li>
-          <li>Install Ansible Galaxy roles: <pre>ansible-galaxy install -r requirements.yml</pre></li>
           <li>Enter workshop directory: <pre>cd devcon4-workshop</pre></li>
           <li>Run initialization script: <pre>bin/init_config</pre></li>
         </ol>
